@@ -5,10 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from '@angular/fire';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ShopComponent } from './shop/shop.component';
+import { RecipesComponent } from './recipes/recipes.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    ShopComponent,
+    RecipesComponent
   ],
   imports: [
     BrowserModule,
