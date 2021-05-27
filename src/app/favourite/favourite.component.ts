@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-favourite',
@@ -7,16 +8,13 @@ import { AngularFireDatabase } from '@angular/fire/database';
   styleUrls: ['./favourite.component.scss']
 })
 export class FavouriteComponent implements OnInit {
-  dbRef = `/api/results/${0}`;
   recipe: any;
-  fb;
   btnColor = "#f3f3f3";
-  constructor(private db: AngularFireDatabase) {
-    this.fb = db;
-  }
+
+  constructor(private fbService: FirebaseService) { }
 
   ngOnInit(): void {
-    this.fb.object(this.dbRef).valueChanges().subscribe(recipe => {
+    this.fbService.getRecipe(0).valueChanges().subscribe(recipe => {
       this.recipe = recipe;
       if (this.recipe.saved) {
         this.btnColor = "#adadad";
@@ -25,12 +23,10 @@ export class FavouriteComponent implements OnInit {
   }
 
   addToFavorite(): void {
-    this.fb.object(`${this.dbRef}`).update({ saved: !this.recipe.saved }).then(() => {
+    this.fbService.updateProps(0, { saved: !this.recipe.saved }).then(() => {
+      this.recipe.saved = !this.recipe.saved;
       this.btnColor = this.recipe.saved ? "#adadad" : "#f3f3f3";
-      console.log("Recipe saved updated.");
-    }).catch(err => {
-      console.log(err);
-    });
+    })
   }
 
 }

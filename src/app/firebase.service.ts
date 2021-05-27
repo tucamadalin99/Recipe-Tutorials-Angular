@@ -8,14 +8,19 @@ import { Recipe } from './models/Recipe';
 })
 export class FirebaseService {
   private dbRef = '/api/results';
+  private fb;
 
-  constructor() {
-    // this.recipesRef = db.list(this.dbRef);
+  constructor(private db: AngularFireDatabase) {
+    this.fb = db;
   }
 
-  // getAll(): AngularFireList<Recipe> {
-  //   // return this.recipesRef;
-  // }
+  getRecipe(key: number): AngularFireObject<Recipe> {
+    return this.fb.object(`${this.dbRef}/${key}`);
+  }
+
+  async updateProps(key: number, props: object): Promise<void> {
+    this.fb.object(`${this.dbRef}/${key}`).update(props);
+  }
 
 
 }
