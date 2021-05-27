@@ -8,22 +8,23 @@ import { FirebaseService } from '../firebase.service';
 })
 export class LikedComponent implements OnInit {
   recipe: any;
-  btnColor = "#f3f3f3";
+  isLiked = false;
   constructor(private fbService: FirebaseService) { }
 
   ngOnInit(): void {
-    this.fbService.getRecipe(0).valueChanges().subscribe(recipe => {
+    this.fbService.getRecipe(0).snapshotChanges().subscribe((recipe: any) => {
       this.recipe = recipe;
       if (this.recipe.liked) {
-        this.btnColor = "#adadad";
+        this.isLiked = true;
       }
+
     })
   }
 
   addLike(): void {
     this.fbService.updateProps(0, { liked: !this.recipe.liked }).then(() => {
-      this.recipe.liked = !this.recipe.liked;
-      this.btnColor = this.recipe.liked ? "#adadad" : "#f3f3f3";
+      this.recipe.liked = this.recipe.liked ? !this.recipe.liked : this.recipe.liked;
+      this.isLiked = !this.isLiked;
     });
 
   }

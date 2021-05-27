@@ -1,5 +1,6 @@
+
 export class Recipe {
-    key: number;
+    key: any;
     name: string;
     description: string;
     imageUrl: string;
@@ -9,13 +10,13 @@ export class Recipe {
     tags: Array<string>;
 
     constructor(obj: Recipe) {
-        this.key = obj.key;
-        this.name = obj.name;
-        this.description = obj.description;
-        this.imageUrl = obj.imageUrl;
-        this.featured = obj.featured;
-        this.liked = obj.liked;
-        this.saved = obj.saved;
-        this.tags = obj.tags;
+        this.key = obj ? obj.key : undefined;
+        this.name = obj ? obj.name : "";
+        this.description = obj ? obj.description : "";
+        this.imageUrl = obj ? obj.imageUrl : "";
+        this.featured = obj ? obj.featured : false;
+        this.liked = obj ? obj.liked : false;
+        this.saved = obj ? obj.saved : false;
+        this.tags = obj ? obj.tags : [];
     }
 }

@@ -4,11 +4,12 @@
     height: 30px;
     border-radius: 50%;
     background-color: var(--white-gray);
-    .label-icon {
-        width: 16px;
-    }
 }
 
 .favourite-btn:hover {
     cursor: pointer;
+}
+
+.filled-btn {
+    background-color: var(--light-gray);
 }

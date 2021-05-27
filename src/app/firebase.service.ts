@@ -8,18 +8,16 @@ import { Recipe } from './models/Recipe';
 })
 export class FirebaseService {
   private dbRef = '/api/results';
-  private fb;
 
-  constructor(private db: AngularFireDatabase) {
-    this.fb = db;
+  constructor(private firebaseDatabase: AngularFireDatabase) {
   }
 
   getRecipe(key: number): AngularFireObject<Recipe> {
-    return this.fb.object(`${this.dbRef}/${key}`);
+    return this.firebaseDatabase.object(`${this.dbRef}/${key}`);
   }
 
   async updateProps(key: number, props: object): Promise<void> {
-    this.fb.object(`${this.dbRef}/${key}`).update(props);
+    this.firebaseDatabase.object(`${this.dbRef}/${key}`).update(props);
   }
 
 
