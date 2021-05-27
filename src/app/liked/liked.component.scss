@@ -1,0 +1,14 @@
+.liked-btn {
+    border: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--white-gray);
+    .label-icon {
+        width: 16px;
+    }
+}
+
+.liked-btn:hover {
+    cursor: pointer;
+}
