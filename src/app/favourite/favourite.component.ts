@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
-import { Recipe } from '../models/Recipe';
-import { FirebaseService } from '../firebase.service';
+
 
 @Component({
   selector: 'app-favourite',
