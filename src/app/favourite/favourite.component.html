@@ -1,3 +1,3 @@
-<button (click)="addToFavorite()" [ngClass]="{'filled-btn':recipe.saved}" #favBtn class="favourite-btn">
+<button (click)="onClick()" [ngClass]="{'filled-btn':isFavourite}" #favBtn class="favourite-btn">
     <span><img class="icon-size" src="../../assets/label.svg" alt="Label Icon"></span>
 </button>

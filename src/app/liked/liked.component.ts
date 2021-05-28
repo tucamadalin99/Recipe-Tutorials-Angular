@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
-import { Recipe } from '../models/Recipe';
 
 @Component({
   selector: 'app-liked',
@@ -8,22 +7,19 @@ import { Recipe } from '../models/Recipe';
   styleUrls: ['./liked.component.scss', '../app.component.scss']
 })
 export class LikedComponent implements OnInit {
-  recipe: Recipe = new Recipe(null);
+  @Input() isLiked;
+  @Output() updateLiked: EventEmitter<void> =
+    new EventEmitter<void>();
 
-  constructor(private fbService: FirebaseService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.fbService.getRecipe(0).valueChanges().subscribe((recipe: any) => {
-      this.recipe = new Recipe(recipe);
-    })
+
   }
 
-  addLike(): void {
-    this.fbService.updateProps(0, { liked: !this.recipe.liked }).then(() => {
-      this.recipe.liked = this.recipe.liked ? true : false;
-    });
-
+  onClick(): void {
+    this.updateLiked.emit();
   }
 
 }
