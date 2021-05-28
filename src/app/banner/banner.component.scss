@@ -1,0 +1,81 @@
+.banner {
+    padding: 2.5vh 2.5vw;
+    margin: 2vh 2.5vw;
+    background-size: cover;
+    background-position: center;
+
+    .recipe-content {
+        padding: 40px 35px;
+        background-color: var(--white);
+        width: 40vw;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-flow: column;
+
+        .tags-container {
+            display: flex;
+            flex-flow: wrap;
+        }
+
+        .tags {
+            display: inline;
+            margin-right: 10px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .tag-svg {
+            position: relative;
+            top: -2px;
+            margin-right: 3px;
+            height: 17px;
+            width: 17px;
+        }
+
+        .title {
+            color: var(--darker);
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .description {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: 1.8;
+            white-space: break-spaces;
+        }
+
+        .btns-container {
+            display: flex;
+            flex-direction: row-reverse;
+            app-liked {
+                margin-right: 1.5vw;
+            }
+        }
+    }
+}
+
+.icon-btn {
+    border: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--white-gray);
+}
+
+.icon-btn:hover {
+    cursor: pointer;
+}
+
+.filled-btn {
+    background-color: var(--light-gray);
+}
+
+@media only screen and (max-width: 600px) {
+    .banner {
+        .recipe-content {
+            width: unset;
+        }
+    }
+}

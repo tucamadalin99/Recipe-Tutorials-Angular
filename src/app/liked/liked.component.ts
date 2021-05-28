@@ -1,29 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from '../firebase.service';
-import { Recipe } from '../models/Recipe';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-liked',
   templateUrl: './liked.component.html',
-  styleUrls: ['./liked.component.scss', '../app.component.scss']
+  styleUrls: ['./liked.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LikedComponent implements OnInit {
-  recipe: Recipe = new Recipe(null);
+  @Input() isLiked;
+  @Output() updateLiked: EventEmitter<void> =
+    new EventEmitter<void>();
 
-  constructor(private fbService: FirebaseService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.fbService.getRecipe(0).valueChanges().subscribe((recipe: any) => {
-      this.recipe = new Recipe(recipe);
-    })
+
   }
 
-  addLike(): void {
-    this.fbService.updateProps(0, { liked: !this.recipe.liked }).then(() => {
-      this.recipe.liked = this.recipe.liked ? true : false;
-    });
-
+  onClick(): void {
+    this.updateLiked.emit();
   }
 
 }

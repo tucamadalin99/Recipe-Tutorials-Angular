@@ -1,0 +1,16 @@
+<div class="banner" [style.background-image]="'url('+recipe.imageUrl+')'">
+    <div class="recipe-content">
+        <div class="tags-container">
+            <img class="icon-size tag-svg" src="../../assets/tag.svg" alt="Tag Icon">
+            <span class="tags" *ngFor="let tag of recipe.tags">
+                {{tag}}
+            </span>
+        </div>
+        <h1 class="title">{{recipe.name}}</h1>
+        <p class="description">{{recipe.description}}</p>
+        <div class="btns-container">
+            <app-favourite (updateFavourite)="onUpdateFavourite()" [isFavourite]="recipe.saved"></app-favourite>
+            <app-liked (updateLiked)="onUpdateLiked()" [isLiked]="recipe.liked"></app-liked>
+        </div>
+    </div>
+</div>

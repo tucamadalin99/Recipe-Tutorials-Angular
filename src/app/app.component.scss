@@ -1,3 +1,15 @@
+.icon-btn {
+    border: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--white-gray);
+}
+
+.icon-btn:hover {
+    cursor: pointer;
+}
+
 .filled-btn {
     background-color: var(--light-gray);
 }
