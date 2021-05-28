@@ -8,9 +8,9 @@ import { Recipe } from '../models/Recipe';
   styleUrls: ['./liked.component.scss', '../app.component.scss']
 })
 export class LikedComponent implements OnInit {
-  recipe!: Recipe;
-  constructor(private fbService: FirebaseService) {
+  recipe: Recipe = new Recipe(null);
 
+  constructor(private fbService: FirebaseService) {
   }
 
   ngOnInit(): void {

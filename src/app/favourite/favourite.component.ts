@@ -9,7 +9,7 @@ import { FirebaseService } from '../firebase.service';
   styleUrls: ['./favourite.component.scss', '../app.component.scss']
 })
 export class FavouriteComponent implements OnInit {
-  recipe!: Recipe;
+  recipe: Recipe = new Recipe(null);
 
   constructor(private fbService: FirebaseService) { }
 
