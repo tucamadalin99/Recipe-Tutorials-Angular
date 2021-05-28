@@ -4,7 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-favourite',
   templateUrl: './favourite.component.html',
-  styleUrls: ['./favourite.component.scss', '../banner/banner.component.scss']
+  styleUrls: ['./favourite.component.scss', '../app.component.scss']
 })
 export class FavouriteComponent implements OnInit {
 
