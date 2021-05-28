@@ -1,9 +1,7 @@
 <div class="banner" [style.background-image]="'url('+recipe.imageUrl+')'">
     <div class="recipe-content">
         <div class="tags-container">
-            <span>
-                <img class="icon-size tag-svg" src="../../assets/tag.svg" alt="Tag Icon">
-            </span>
+            <img class="icon-size tag-svg" src="../../assets/tag.svg" alt="Tag Icon">
             <span class="tags" *ngFor="let tag of recipe.tags">
                 {{tag}}
             </span>

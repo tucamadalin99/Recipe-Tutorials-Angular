@@ -20,15 +20,21 @@ export class BannerComponent implements OnInit {
   }
 
   onUpdateFavourite(): void {
-    this.firebaseService.updateProps(0, { saved: !this.recipe.saved }).then(() => {
+    const prop: object = { saved: !this.recipe.saved };
+
+    this.firebaseService.updateProps(0, prop).then(() => {
       console.log("'Saved' property changed.");
     }).catch(err => console.log(err));
+
   }
 
   onUpdateLiked(): void {
-    this.firebaseService.updateProps(0, { liked: !this.recipe.liked }).then(() => {
+    const prop: object = { liked: !this.recipe.liked };
+
+    this.firebaseService.updateProps(0, prop).then(() => {
       console.log("'Liked' property changed.");
     }).catch(err => console.log(err));
+
   }
 
 }
