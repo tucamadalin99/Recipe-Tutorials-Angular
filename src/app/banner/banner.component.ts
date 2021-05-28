@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import { Recipe } from '../models/Recipe';
 
@@ -6,7 +6,8 @@ import { Recipe } from '../models/Recipe';
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.scss']
+  styleUrls: ['./banner.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BannerComponent implements OnInit {
   recipe: Recipe = new Recipe(null);

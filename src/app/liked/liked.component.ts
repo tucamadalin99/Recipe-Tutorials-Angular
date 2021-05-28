@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-liked',
   templateUrl: './liked.component.html',
-  styleUrls: ['./liked.component.scss', '../app.component.scss']
+  styleUrls: ['./liked.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LikedComponent implements OnInit {
   @Input() isLiked;
