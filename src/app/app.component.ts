@@ -13,19 +13,15 @@ export class AppComponent implements OnInit {
   allRecipes: Recipe[];
   categories: string[] = [];
 
-  constructor(private firebaseService: FirebaseService) {
-
-  }
+  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
     this.firebaseService.getAllRecipes().valueChanges().subscribe(recipes => {
       this.allRecipes = recipes;
-      console.log(this.allRecipes);
       recipes.forEach(recipe => {
         this.categories = [...this.categories, ...recipe.tags];
       })
       this.categories = _.uniq(this.categories);
-      console.log(this.categories);
     })
   }
 }

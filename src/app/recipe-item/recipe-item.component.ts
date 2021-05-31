@@ -8,15 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class RecipeItemComponent implements OnInit {
   @Input() item = '';
-
   imageUrl: string;
   hasImg: boolean = true;
-
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log('item', this.item);
     this.imageUrl = `../../assets/recipe-items/${this.item}.png`;
   }
 
