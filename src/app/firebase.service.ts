@@ -16,6 +16,10 @@ export class FirebaseService {
     return this.firebaseDatabase.object(`${this.dbRef}/${key}`);
   }
 
+  getAllRecipes(): AngularFireList<Recipe> {
+    return this.firebaseDatabase.list(`${this.dbRef}`);
+  }
+
   async updateProps(key: number, props: object): Promise<void> {
     this.firebaseDatabase.object(`${this.dbRef}/${key}`).update(props);
   }

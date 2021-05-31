@@ -1,4 +1,8 @@
 .recipe-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 4vw 2vw;
 
     .recipe-item-title {
@@ -18,5 +22,16 @@
         height: 67px;
         border-radius: 50%;
         background-color: var(--light-yellow);
+    }
+
+    .acronym,
+    .recipe-item-img {
+        cursor: pointer;
+    }
+}
+
+@media only screen and(max-width: 600px) {
+    .recipe-item-container {
+        padding: 2vw 4vw;
     }
 }
