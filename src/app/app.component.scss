@@ -13,3 +13,14 @@
 .filled-btn {
     background-color: var(--light-gray);
 }
+
+.recipe-items-container {
+    border: 1px solid var(--white-gray);
+    text-align: center;
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    margin: 0 2.5vw;
+    margin-bottom: 3vh;
+}

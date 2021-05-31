@@ -1,0 +1,10 @@
+<div class="recipe-item-container">
+    <img *ngIf="hasImg; else noImg" src="../../assets/recipe-items/hamburger.png" alt="Recipe Item Image"
+        class="recipe-item-img">
+    <ng-template #noImg>
+        <div class="acronym">B</div>
+    </ng-template>
+    <h3 class="recipe-item-title">
+        Burger
+    </h3>
+</div>
