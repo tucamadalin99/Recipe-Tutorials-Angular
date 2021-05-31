@@ -1,4 +1,4 @@
-<div class="recipe-item-container">
+<div class="recipe-item-container" (click)="sendItem(item)">
     <img *ngIf="hasImg; else noImg" [src]="imageUrl" (error)="hasImg=false" alt="Recipe Item Image"
         class="recipe-item-img">
     <ng-template #noImg>
