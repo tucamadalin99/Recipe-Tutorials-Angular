@@ -14,6 +14,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { LikedComponent } from './liked/liked.component';
 import { BannerComponent } from './banner/banner.component';
+import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BannerComponent } from './banner/banner.component';
     RecipesComponent,
     FavouriteComponent,
     LikedComponent,
-    BannerComponent
+    BannerComponent,
+    RecipeItemComponent
   ],
   imports: [
     BrowserModule,
