@@ -1,7 +1,7 @@
 # RecipeTutorials
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
-Hosted on: easymeals34.web.app
+Hosted on: https://easymeals34.web.app
 
 ## Development server
 
