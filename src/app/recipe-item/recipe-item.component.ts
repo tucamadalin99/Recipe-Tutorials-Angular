@@ -10,6 +10,9 @@ export class RecipeItemComponent implements OnInit {
   @Input() item = '';
   imageUrl: string;
   hasImg: boolean = true;
+  sendItem(item: string): void {
+    console.log(item);
+  }
 
   constructor() { }
 

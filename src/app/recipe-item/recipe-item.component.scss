@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4vw 2vw;
+    padding: 2vh 2vw;
     max-width: 15vw;
 
     .recipe-item-title {
@@ -24,11 +24,10 @@
         border-radius: 50%;
         background-color: var(--light-yellow);
     }
+}
 
-    .acronym,
-    .recipe-item-img {
-        cursor: pointer;
-    }
+.recipe-item-container:hover {
+    cursor: pointer;
 }
 
 @media only screen and(max-width: 600px) {
