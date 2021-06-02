@@ -28,5 +28,12 @@
     margin-bottom: 3vh;
 }
 
+.dialog-container {
+    display: none;
+}
+
+.dialog-active {
+}
+
 @media only screen and(max-width: 600px) {
 }

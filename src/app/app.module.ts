@@ -16,6 +16,7 @@ import { LikedComponent } from './liked/liked.component';
 import { BannerComponent } from './banner/banner.component';
 import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     LikedComponent,
     BannerComponent,
     RecipeItemComponent,
-    HomepageComponent
+    HomepageComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
