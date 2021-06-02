@@ -24,5 +24,9 @@ export class FirebaseService {
     this.firebaseDatabase.object(`${this.dbRef}/${key}`).update(props);
   }
 
+  getCartInfo(): AngularFireObject<any> {
+    return this.firebaseDatabase.object('/1');
+  }
+
 
 }
