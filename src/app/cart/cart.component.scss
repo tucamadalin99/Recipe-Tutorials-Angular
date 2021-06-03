@@ -1,9 +1,5 @@
 .cart-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0 2.5vw;
-
+    transition: 0.5s;
     .cart-img {
         width: 30px;
         height: 18px;
@@ -12,11 +8,12 @@
     .cart-info {
         margin-top: 0.5vh;
     }
+}
 
-    .cart-img:hover,
-    .cart-info:hover {
-        cursor: pointer;
-    }
+.cart-container:hover {
+    cursor: pointer;
+    color: var(--light-gray);
+    font-size: 15px;
 }
 
 .cart-dialog {
@@ -75,5 +72,9 @@
 @media only screen and(max-width:600px) {
     .item-container {
         width: 90%;
+    }
+
+    .cart-img {
+        display: none;
     }
 }
