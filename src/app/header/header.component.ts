@@ -9,7 +9,10 @@ import { FirebaseService } from '../firebase.service';
 export class HeaderComponent implements OnInit {
 
   cart: any = new Object(null);
-  getInfo(): void {
+
+  constructor(private firebaseService: FirebaseService) { }
+
+  private getInfo(): void {
     this.firebaseService.getCartInfo().valueChanges().subscribe(cart => {
       if (cart) {
         this.cart = new Object(cart);
@@ -24,8 +27,6 @@ export class HeaderComponent implements OnInit {
       }
     })
   }
-
-  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
     if (window['userIsLoggedIn']) {
