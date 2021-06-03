@@ -11,5 +11,9 @@ import * as _ from 'lodash';
 export class AppComponent {
   title = 'recipe-tutorials';
 
+  ngOnInit() {
+    window['userIsLoggedIn'] = false;
+  }
+
 
 }

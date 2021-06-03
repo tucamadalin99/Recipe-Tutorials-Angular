@@ -9,10 +9,7 @@ import { FirebaseService } from '../firebase.service';
 export class HeaderComponent implements OnInit {
 
   cart: any = new Object(null);
-
-  constructor(private firebaseService: FirebaseService) { }
-
-  ngOnInit() {
+  getInfo(): void {
     this.firebaseService.getCartInfo().valueChanges().subscribe(cart => {
       if (cart) {
         this.cart = new Object(cart);
@@ -26,6 +23,24 @@ export class HeaderComponent implements OnInit {
         this.cart.cartItems = formattedArr;
       }
     })
+  }
+
+  constructor(private firebaseService: FirebaseService) { }
+
+  ngOnInit() {
+    if (window['userIsLoggedIn']) {
+      this.getInfo();
+    } else if (localStorage.getItem('userId') == '1'
+      && localStorage.getItem('user') == 'user'
+      && localStorage.getItem('password') == 'user'
+    ) {
+      this.getInfo();
+    } else {
+      this.cart = new Object(null);
+      this.cart.cartPrice = 0;
+      this.cart.cartItems = [];
+    }
+
   }
 
 }
