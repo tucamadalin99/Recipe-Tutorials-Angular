@@ -4,10 +4,17 @@
     </div>
 
     <div class="search-bar-container">
-        <input class="search-input" name="search" type="text" placeholder="Search">
-        <button class="search-btn">
+        <input class="search-input" name="search" type="text" placeholder="Search" #search>
+        <button (click)="searchItem(search.value)" class="search-btn">
             <img class="search-icon" src="../../assets/search.svg" alt="Search Icon">
         </button>
     </div>
-    <app-cart [cart]="cart"></app-cart>
+
+    <div class="header-btns">
+        <span class="spn-fav">
+            <img src="../../assets/label.svg" class="icon-size badge-img" alt="Favourites">Favourites
+        </span>
+        <app-cart [cart]="cart"></app-cart>
+    </div>
+
 </div>
