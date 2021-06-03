@@ -1,9 +1,4 @@
 .cart-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0 2.5vw;
-
     .cart-img {
         width: 30px;
         height: 18px;
@@ -75,5 +70,9 @@
 @media only screen and(max-width:600px) {
     .item-container {
         width: 90%;
+    }
+
+    .cart-img {
+        display: none;
     }
 }
