@@ -28,6 +28,10 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  public searchItem(value) {
+    console.log(`You searched for ${value}`);
+  }
+
   ngOnInit() {
     if (window['userIsLoggedIn']) {
       this.getInfo();
@@ -38,8 +42,9 @@ export class HeaderComponent implements OnInit {
       this.getInfo();
     } else {
       this.cart = new Object(null);
-      this.cart.cartPrice = 0;
+      this.cart.cartPrice = 0.00;
       this.cart.cartItems = [];
+      this.cart.notLogged = true;
     }
 
   }

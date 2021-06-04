@@ -1,8 +1,10 @@
 .cart-container {
-    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .cart-img {
-        width: 30px;
-        height: 18px;
+        width: 25px;
+        height: 17px;
     }
 
     .cart-info {
@@ -12,8 +14,6 @@
 
 .cart-container:hover {
     cursor: pointer;
-    color: var(--light-gray);
-    font-size: 15px;
 }
 
 .cart-dialog {
@@ -44,6 +44,7 @@
         text-transform: uppercase;
         border-radius: 5px;
         margin-bottom: 2vh;
+        margin-top: 2vh;
     }
 
     .close-dialog:hover {
@@ -76,5 +77,9 @@
 
     .cart-img {
         display: none;
+    }
+
+    .cart-info {
+        margin-top: 0 !important;
     }
 }
