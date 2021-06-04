@@ -1,0 +1,19 @@
+.featured-item-container {
+    width: 25%;
+    .featured-item-img {
+        background-size: cover;
+        width: 100%;
+        max-height: 150px;
+        margin-bottom: 2vh;
+    }
+
+    .featured-item-tags {
+        display: flex;
+        flex-flow: wrap;
+    }
+
+    .fav-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

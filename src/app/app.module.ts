@@ -18,6 +18,7 @@ import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './header/header.component';
+import { FeaturedItemComponent } from './featured-item/featured-item.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HeaderComponent } from './header/header.component';
     RecipeItemComponent,
     HomepageComponent,
     CartComponent,
-    HeaderComponent
+    HeaderComponent,
+    FeaturedItemComponent
   ],
   imports: [
     BrowserModule,
