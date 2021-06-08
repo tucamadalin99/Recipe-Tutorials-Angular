@@ -1,6 +1,6 @@
 <div class="product-container">
     <img (click)="onImgClick()" [src]="recipe.imageUrl" alt="Product Image" class="product-img">
-    <h5 class="product-price">${{recipe.price}} / {{recipe.type}}</h5>
+    <h5 class="product-price">${{recipe.price.toFixed(2)}} / {{recipe.type}}</h5>
     <h5 class="product-title">{{recipe.name}}</h5>
     <button (click)="addToCart(recipe.name)" class="add-cart-btn">Add</button>
 </div>
