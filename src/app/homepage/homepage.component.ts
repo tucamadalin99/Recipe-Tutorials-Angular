@@ -25,4 +25,12 @@ export class HomepageComponent implements OnInit {
     })
   }
 
+  onUpdateCart(productName: string) {
+    this.firebaseService.addToCart(productName).then(() => {
+      console.log(productName + " added to cart.")
+    }).catch(() => {
+      console.log("An error has occured")
+    })
+  }
+
 }

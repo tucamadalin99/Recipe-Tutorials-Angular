@@ -1,0 +1,32 @@
+.product-container {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3vh 2.5vw;
+    border: 1px solid var(--light-gray);
+
+    .product-img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .product-price {
+        margin: 2vh 0.5vw;
+    }
+
+    .product-title {
+        margin: 0 0.5vw 10vh 0.5vw;
+    }
+
+    .add-cart-btn {
+        margin: 2vh 1vw;
+        height: 7vh;
+        font-size: 15px;
+        font-weight: bold;
+        border: 0;
+        background-color: var(--light-yellow);
+        cursor: pointer;
+    }
+}

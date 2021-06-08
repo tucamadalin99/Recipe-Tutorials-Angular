@@ -19,6 +19,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './header/header.component';
 import { FeaturedItemComponent } from './featured-item/featured-item.component';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FeaturedItemComponent } from './featured-item/featured-item.component';
     HomepageComponent,
     CartComponent,
     HeaderComponent,
-    FeaturedItemComponent
+    FeaturedItemComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,
