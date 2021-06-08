@@ -28,5 +28,8 @@ export class FirebaseService {
     return this.firebaseDatabase.object('/1');
   }
 
+  async addToCart(product: string): Promise<void> {
+    this.firebaseDatabase.database.ref('/1/cartItems').push(product);
+  }
 
 }

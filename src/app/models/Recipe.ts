@@ -8,6 +8,8 @@ export class Recipe {
     liked: boolean;
     saved: boolean;
     tags: Array<string>;
+    type: string;
+    price: number;
 
     constructor(obj: Recipe) {
         this.key = obj ? obj.key : undefined;
@@ -18,5 +20,7 @@ export class Recipe {
         this.liked = obj ? obj.liked : false;
         this.saved = obj ? obj.saved : false;
         this.tags = obj ? obj.tags : [];
+        this.type = obj ? obj.type : "";
+        this.price = obj ? obj.price : undefined;
     }
 }

@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CartComponent implements OnInit {
   @Input() cart;
   isOpened: boolean = false;
+  iterableItems: string[];
 
   openDialog(): void {
     this.isOpened = true;

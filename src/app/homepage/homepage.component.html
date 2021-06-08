@@ -6,3 +6,4 @@
     <app-featured-item [index]="allRecipes.indexOf(allRecipes[0])" [recipeItem]="allRecipes[0]">
     </app-featured-item>
 </div>
+<app-product-item (updateCart)="onUpdateCart($event)" [recipe]="allRecipes[0]"></app-product-item>

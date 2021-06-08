@@ -19,7 +19,11 @@ export class HeaderComponent implements OnInit {
         let counts = {};
         let formattedArr = [];
         //Counting repetitions of items
-        this.cart.cartItems.forEach((x) => { counts[x.toLowerCase()] = (counts[x.toLowerCase()] || 0) + 1; });
+        for (let prop in this.cart.cartItems) {
+          counts[this.cart.cartItems[prop].toLowerCase()] =
+            (counts[this.cart.cartItems[prop].toLowerCase()] || 0) + 1;
+        }
+
         for (let prop in counts) {
           formattedArr.push(`${prop} ${counts[prop]}x`);
         }
