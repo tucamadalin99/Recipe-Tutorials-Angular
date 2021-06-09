@@ -31,3 +31,10 @@ html {
 .filled-btn {
     background-color: var(--light-gray);
 }
+
+@media only screen and(max-width: 600px) {
+    .slick-next,
+    .slick-prev {
+        display: none !important;
+    }
+}

@@ -1,3 +1,15 @@
 .carousel-wrapper {
     margin: 0 2.5vw;
+    .slick-prev:before,
+    .slick-next:before {
+        color: red !important;
+    }
+}
+// app-recipes-carousel {
+//     margin: 0 2.5vw;
+// }
+
+.slick-prev:before,
+.slick-next:before {
+    color: red !important;
 }

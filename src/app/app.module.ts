@@ -20,6 +20,8 @@ import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './header/header.component';
 import { FeaturedItemComponent } from './featured-item/featured-item.component';
 import { ProductItemComponent } from './product-item/product-item.component';
+import { RecipesCarouselComponent } from './recipes-carousel/recipes-carousel.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -35,14 +37,16 @@ import { ProductItemComponent } from './product-item/product-item.component';
     CartComponent,
     HeaderComponent,
     FeaturedItemComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    RecipesCarouselComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'Angular-Easymeals'),
     AngularFireDatabaseModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
