@@ -29,3 +29,15 @@
         cursor: pointer;
     }
 }
+
+@media only screen and(max-width:600px) {
+    .product-container {
+        .product-img {
+            height: 15vh;
+        }
+
+        .add-cart-btn {
+            margin: 0;
+        }
+    }
+}
