@@ -22,6 +22,7 @@ import { FeaturedItemComponent } from './featured-item/featured-item.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { RecipesCarouselComponent } from './recipes-carousel/recipes-carousel.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     HeaderComponent,
     FeaturedItemComponent,
     ProductItemComponent,
-    RecipesCarouselComponent
+    RecipesCarouselComponent,
+    ProductCarouselComponent
   ],
   imports: [
     BrowserModule,
