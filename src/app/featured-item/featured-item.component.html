@@ -1,12 +1,12 @@
 <div class="featured-item-container">
+    <div class="fav-container">
+        <app-favourite (updateFavourite)="onUpdateFavourite()" [isFavourite]="recipeItem.saved"></app-favourite>
+    </div>
     <img class="featured-item-img" [src]="recipeItem.imageUrl">
     <div class="featured-item-tags">
         <img src="../../assets/tag.svg" alt="Tag Icon" class="tag-svg icon-size">
         <span class="tags" *ngFor="let tag of recipeItem.tags">{{tag}}</span>
     </div>
     <h1 class="featured-item-title">{{recipeItem.name}}</h1>
-    <p class="description">{{recipeItem.description}}</p>
-    <div class="fav-container">
-        <app-favourite (updateFavourite)="onUpdateFavourite()" [isFavourite]="recipeItem.saved"></app-favourite>
-    </div>
+    <p class="description">{{recipeItem.description | slice:0:150}}</p>
 </div>

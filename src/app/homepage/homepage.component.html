@@ -3,7 +3,7 @@
     <app-recipe-item [item]="category" *ngFor="let category of categories"></app-recipe-item>
 </div>
 <div class="carousel-wrapper">
-    <app-featured-item [index]="allRecipes.indexOf(allRecipes[0])" [recipeItem]="allRecipes[0]">
-    </app-featured-item>
+    <app-recipes-carousel [featuredRecipes]="featuredRecipes"></app-recipes-carousel>
 </div>
+
 <app-product-item (updateCart)="onUpdateCart($event)" [recipe]="allRecipes[0]"></app-product-item>

@@ -11,6 +11,8 @@ export class FeaturedItemComponent implements OnInit {
   @Input() recipeItem: Recipe = new Recipe(null);
   @Input() index: number = 0;
 
+  constructor(private firebaseService: FirebaseService) { }
+
   onUpdateFavourite(): void {
     const prop: object = { saved: !this.recipeItem.saved };
 
@@ -19,7 +21,6 @@ export class FeaturedItemComponent implements OnInit {
     }).catch(err => console.log(err));
   }
 
-  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
     console.log(this.recipeItem);
