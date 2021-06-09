@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { Recipe } from '../models/Recipe';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-product-item',
@@ -9,17 +10,17 @@ import { Recipe } from '../models/Recipe';
 })
 export class ProductItemComponent implements OnInit {
   @Input() recipe: Recipe;
-  @Output() updateCart: EventEmitter<string> =
-    new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private _firebaseService: FirebaseService) {
+
+  }
 
   ngOnInit(): void {
 
   }
 
   addToCart(productName) {
-    this.updateCart.emit(productName);
+    this._firebaseService.addToCart(productName);
   }
 
   onImgClick(): void {

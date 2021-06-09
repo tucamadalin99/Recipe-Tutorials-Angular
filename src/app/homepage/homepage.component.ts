@@ -11,16 +11,12 @@ import { Recipe } from '../models/Recipe';
 export class HomepageComponent implements OnInit {
 
   allRecipes: Recipe[];
-  featuredRecipes: Recipe[];
   categories: string[] = [];
-  slideConfig = { "slidesToShow": 4, "slidesToScroll": 1 };
 
-  constructor(private firebaseService: FirebaseService) { }
+  constructor(private _firebaseService: FirebaseService) { }
 
   ngOnInit() {
-    this.firebaseService.getAllRecipes().valueChanges().subscribe(recipes => {
-      this.allRecipes = recipes;
-      this.featuredRecipes = recipes.filter(el => el.featured);
+    this._firebaseService.getAllRecipes().valueChanges().subscribe(recipes => {
       recipes.forEach(recipe => {
         this.categories = [...this.categories, ...recipe.tags];
       })
@@ -28,12 +24,6 @@ export class HomepageComponent implements OnInit {
     })
   }
 
-  onUpdateCart(productName: string) {
-    this.firebaseService.addToCart(productName).then(() => {
-      console.log(productName + " added to cart.")
-    }).catch(() => {
-      console.log("An error has occured")
-    })
-  }
+
 
 }

@@ -21,11 +21,7 @@ export class FeaturedItemComponent implements OnInit {
     }).catch(err => console.log(err));
   }
 
-
   ngOnInit(): void {
-    console.log(this.recipeItem);
   }
-
-
 
 }

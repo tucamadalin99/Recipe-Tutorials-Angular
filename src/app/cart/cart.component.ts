@@ -20,7 +20,9 @@ export class CartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
+    if (this.cart && this.cart.cartPrice) {
+      this.cart.cartPrice = this.cart.cartPrice.toFixed(2);
+    }
   }
 
 
