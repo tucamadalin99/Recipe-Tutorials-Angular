@@ -23,6 +23,10 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { RecipesCarouselComponent } from './recipes-carousel/recipes-carousel.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ProductPageComponent } from './product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,8 @@ import { ProductCarouselComponent } from './product-carousel/product-carousel.co
     FeaturedItemComponent,
     ProductItemComponent,
     RecipesCarouselComponent,
-    ProductCarouselComponent
+    ProductCarouselComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,10 @@ import { ProductCarouselComponent } from './product-carousel/product-carousel.co
     AngularFireDatabaseModule,
     AppRoutingModule,
     FormsModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
