@@ -1,0 +1,14 @@
+<div class="product-page-container">
+    <div class="img-container">
+        <img [src]="product.imageUrl" class="product-img">
+    </div>
+
+    <div class="product-content">
+        <h3 class="product-title">{{product.name}}</h3>
+        <h3 class="product-price">${{product.price}} / {{product.type}}</h3>
+        <button (click)="addProduct()" class="add-product-btn">Add</button>
+    </div>
+</div>
+<div class="carousel-wrapper">
+    <app-product-carousel></app-product-carousel>
+</div>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { Recipe } from '../models/Recipe';
 import { FirebaseService } from '../firebase.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-item',
@@ -11,7 +13,7 @@ import { FirebaseService } from '../firebase.service';
 export class ProductItemComponent implements OnInit {
   @Input() recipe: Recipe;
 
-  constructor(private _firebaseService: FirebaseService) {
+  constructor(private _firebaseService: FirebaseService, private _toastr: ToastrService, private router: Router) {
 
   }
 
@@ -20,11 +22,13 @@ export class ProductItemComponent implements OnInit {
   }
 
   addToCart(productName) {
-    this._firebaseService.addToCart(productName);
+    this._firebaseService.addToCart(productName).then(() => {
+      this._toastr.success(`${productName} added to cart!`, "Success")
+    })
   }
 
   onImgClick(): void {
-    console.log("Product image clicked to be redirected to item page...")
+    this.router.navigate(['/products', this.recipe.key]);
   }
 
 }

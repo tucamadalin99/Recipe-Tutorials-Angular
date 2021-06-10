@@ -27,11 +27,17 @@
         border: 0;
         background-color: var(--light-yellow);
         cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .add-cart-btn:hover {
+        background-color: var(--dark-yellow);
     }
 }
 
 @media only screen and(max-width:600px) {
     .product-container {
+        height: 40vh;
         .product-img {
             height: 15vh;
         }
