@@ -1,0 +1,30 @@
+<div class="content">
+    <h1 class="recipe-title">{{recipe.name}}</h1>
+    <div class="recipe-img" [style.background-image]="'url('+recipe.imageUrl+')'"></div>
+    <div class="tags-container">
+        <div class="left-bar"></div>
+        <div class="tags-all">
+            <img src="../../assets/tag.svg" alt="Tag Icon" class="tag-svg">
+            <span class="tags" *ngFor="let tag of recipe.tags">{{tag}}</span>
+        </div>
+        <div class="right-bar"></div>
+    </div>
+    <p class="description">{{recipe.description}}</p>
+    <div class="overall-grade">
+        <div class="star grade"></div>
+        <div class="star grade"></div>
+        <div class="star grade"></div>
+        <div class="star grade"></div>
+        <div class="star grade"></div>
+        <h3 class="grade-text">No Reviews</h3>
+    </div>
+</div>
+
+<div class="recommandations">
+    <h2 class="recommandations-title">You may like these too</h2>
+    <div class="bar"></div>
+</div>
+
+<div class="carousel-wrapper">
+    <app-recipes-carousel></app-recipes-carousel>
+</div>
