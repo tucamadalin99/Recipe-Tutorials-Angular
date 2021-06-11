@@ -27,6 +27,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { RecipePageComponent } from './recipe-page/recipe-page.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
     ProductItemComponent,
     RecipesCarouselComponent,
     ProductCarouselComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    RecipePageComponent
   ],
   imports: [
     BrowserModule,

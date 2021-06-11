@@ -1,4 +1,4 @@
-<div class="featured-item-container">
+<div (click)="onRecipeClick()" class="featured-item-container">
     <div class="fav-container">
         <app-favourite (updateFavourite)="onUpdateFavourite()" [isFavourite]="recipeItem.saved"></app-favourite>
     </div>
