@@ -23,7 +23,4 @@ export class HomepageComponent implements OnInit {
       this.categories = _.uniq(this.categories);
     })
   }
-
-
-
 }
