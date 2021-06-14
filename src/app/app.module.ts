@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { RecipePageComponent } from './recipe-page/recipe-page.component';
+import { CommentSectionComponent } from './comment-section/comment-section.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { RecipePageComponent } from './recipe-page/recipe-page.component';
     RecipesCarouselComponent,
     ProductCarouselComponent,
     ProductPageComponent,
-    RecipePageComponent
+    RecipePageComponent,
+    CommentSectionComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ import { RecipePageComponent } from './recipe-page/recipe-page.component';
     CommonModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

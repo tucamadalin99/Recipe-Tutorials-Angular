@@ -1,0 +1,42 @@
+<div class="comment-section-container">
+    <div class="section-header">
+        <h3 class="header-title">Leave a reply</h3>
+        <div class="bar"></div>
+    </div>
+
+    <p class="info-text description">Your email address will not be published. Required fields are marked *</p>
+    <div class="rating-container description">Rating
+        <div [style.background-image]="'url('+'../../assets/'+ grade + '.png'+')'"
+            *ngFor="let grade of gradeArr; index as i" class="star" (click)="handleGrade(i)"></div>
+    </div>
+    <form class="comment-form" [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+        <textarea name="comment" id="comment" class="comment-input" placeholder="Your comment *"
+            formControlName="comment" [readonly]="alreadyReviewed"></textarea>
+        <input class="name-input" type="text" id="name" formControlName="name" placeholder="Your name *"
+            [readonly]="alreadyReviewed">
+        <button [ngClass]="{'disabled-btn': alreadyReviewed}" class="submit-btn" type="submit"
+            [disabled]="alreadyReviewed">Post Comment</button>
+    </form>
+
+    <div class="all-comments-container">
+        <div class="comment-container" *ngFor="let review of reviews">
+            <div class="comment-btns" *ngIf="review.userId === userId">
+                <button class="edit-btn" (click)="handleEdit()">Edit</button>
+                <button class="delete-btn" (click)="toggleDialog()">Delete</button>
+            </div>
+            <h4 class="comment-name">User: {{review.name}}</h4>
+            <h4 class="comment-grade">Grade given: {{review.grade}} stars</h4>
+            <p class="comment-content">{{review.comment}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="delete-dialog dialog-container" [ngClass]="{'dialog-active':dialogOpen}">
+    <div class="dialog-content">
+        <h2>Are you sure?</h2>
+        <div class="btn-controls">
+            <button (click)="handleDelete()" class="delete-btn">Delete</button>
+            <button (click)="toggleDialog()" class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+</div>

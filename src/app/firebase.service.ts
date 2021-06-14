@@ -32,4 +32,12 @@ export class FirebaseService {
     this.firebaseDatabase.database.ref('/1/cartItems').push(product);
   }
 
+  async postComment(i: number, input: any): Promise<void> {
+    this.firebaseDatabase.database.ref(`/api/results/${i}/comments/${input.userId}`).set(input);
+  }
+
+  async deleteComment(i: number, userId: number) {
+    this.firebaseDatabase.database.ref(`/api/results/${i}/comments/${userId}`).remove();
+  }
+
 }
