@@ -10,6 +10,7 @@ export class Recipe {
     tags: Array<string>;
     type: string;
     price: number;
+    comments: any[];
 
     constructor(obj: Recipe) {
         this.key = obj ? obj.key : undefined;
@@ -22,5 +23,6 @@ export class Recipe {
         this.tags = obj ? obj.tags : [];
         this.type = obj ? obj.type : "";
         this.price = obj ? obj.price : undefined;
+        this.comments = obj ? obj.comments : undefined;
     }
 }

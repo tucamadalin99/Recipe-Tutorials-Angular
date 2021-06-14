@@ -11,12 +11,9 @@
     </div>
     <p class="description">{{recipe.description}}</p>
     <div class="overall-grade">
-        <div class="star grade"></div>
-        <div class="star grade"></div>
-        <div class="star grade"></div>
-        <div class="star grade"></div>
-        <div class="star grade"></div>
-        <h3 class="grade-text">No Reviews</h3>
+        <div [style.background-image]="'url('+'../../assets/'+ grade + '.png'+')'"
+            *ngFor="let grade of gradeArr; index as i" class="star grade" (click)="handleGrade(i)"></div>
+        <h3 class="grade-text">{{result}}</h3>
     </div>
 </div>
 
@@ -28,3 +25,4 @@
 <div class="carousel-wrapper">
     <app-recipes-carousel></app-recipes-carousel>
 </div>
+<app-comment-section [recipeKey]="key"></app-comment-section>
