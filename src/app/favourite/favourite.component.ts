@@ -20,7 +20,8 @@ export class FavouriteComponent implements OnInit {
 
   }
 
-  onClick(): void {
+  onClick($event): void {
+    $event.stopPropagation();
     this.updateFavourite.emit();
   }
 

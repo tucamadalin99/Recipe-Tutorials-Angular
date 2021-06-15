@@ -15,8 +15,12 @@
     background-color: var(--light-gray);
 }
 
-.filled-btn {
-    background-color: var(--light-gray);
+.filled-btn-fav {
+    fill: green;
+}
+
+.filled-btn-like {
+    fill: red;
 }
 
 .recipe-items-container {

@@ -1,3 +1,4 @@
+<h3 class="recipes-carousel-title">Featured Recipes</h3>
 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
     <div ngxSlickItem *ngFor="let recipe of featuredRecipes" class="slide">
         <app-featured-item [index]="featuredRecipes.indexOf(recipe)" [recipeItem]="recipe">

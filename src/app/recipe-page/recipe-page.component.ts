@@ -25,6 +25,8 @@ export class RecipePageComponent implements OnInit {
       })
     })
     this._firebaseService.getRecipe(this.key).valueChanges().subscribe(recipe => {
+      this.allGrades = 0;
+      this.gradeArr = ['star-outline', 'star-outline', 'star-outline', 'star-outline', 'star-outline'];
       if (recipe.comments && recipe.comments.length > 0) {
         recipe.comments.forEach(el => {
           this.allGrades += el.grade;
