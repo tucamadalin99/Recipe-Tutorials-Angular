@@ -12,7 +12,7 @@ export class RecipeItemComponent implements OnInit {
   imageUrl: string;
   hasImg: boolean = true;
   sendItem(item: string): void {
-    this.router.navigate(['/search', item, "all"]);
+    this.router.navigate(['/search', item, "all-items"]);
   }
 
   constructor(private router: Router) { }
