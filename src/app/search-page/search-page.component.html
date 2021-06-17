@@ -28,6 +28,7 @@
 
     </div>
     <div class="items-container">
+        <h2 *ngIf="currentItems.length == 0">No items found based on your criteria</h2>
         <app-product-item class="item" *ngFor="let item of currentItems" [recipe]="item"></app-product-item>
     </div>
 </div>
