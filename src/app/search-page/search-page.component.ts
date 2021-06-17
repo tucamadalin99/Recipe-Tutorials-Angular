@@ -58,7 +58,6 @@ export class SearchPageComponent implements OnInit {
       }
     })
 
-    console.log('exec')
     this.route.params.subscribe(params => {
       this.categorySearch = params['word'];
       this.stringSearch = params['search'];

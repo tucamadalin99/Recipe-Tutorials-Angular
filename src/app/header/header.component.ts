@@ -43,14 +43,12 @@ export class HeaderComponent implements OnInit {
   }
 
   public searchItem(value) {
-    if (!value) {
-      this.route.navigate(['/search', "all-categories", "all-items"]);
+    if (value) {
+      this.route.url.includes('/search') ?
+        this.data.sendString(value) :
+        this.route.navigate(['/search', 'all-categories', value]);
     } else {
-      if (this.route.url.includes("/search")) {
-        this.data.sendString(value);
-      }
-
-      this.route.navigate(['/search', "all-categories", value]);
+      this.route.navigate(['/search', "all-categories", "all-items"]);
     }
   }
 
