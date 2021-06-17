@@ -3,25 +3,25 @@
         <p class="description">Choose a category result to narrow shop search results:</p>
         <h4>By price:</h4>
         <div class="slide-container">
-            <input type="range" min="0" [max]="priceMax" (change)="setValue($event)" [value]="priceLimit"
-                class="slider-range" id="myRange">
+            <input type="range" min="0" [max]="priceMax" (change)="filterItems()" (input)="setValue($event)"
+                [value]="priceLimit" class="slider-range" id="myRange">
             <div class="range-content">
                 <span class="description">Price 0$-{{priceLimit}}$</span>
-                <span class="description filter-btn" (click)="filterItems()">Filter</span>
             </div>
 
         </div>
 
         <h4>By featured:</h4>
         <div class="featured-box">
-            <input (input)="isFeatured = !isFeatured" type="checkbox" id="featured" name="featured">
+            <input [(ngModel)]="isFeatured" (change)="filterItems()" type="checkbox" id="featured" name="featured">
             <label for="featured">Featured</label>
         </div>
 
         <h4>By category:</h4>
         <div class="filter-inputs-container">
             <div class="filter-container" *ngFor="let category of categories">
-                <input type="checkbox" [(ngModel)]="category.isChecked" [id]="category.name" [name]="category.name">
+                <input type="checkbox" (change)="filterItems()" [(ngModel)]="category.isChecked" [id]="category.name"
+                    [name]="category.name">
                 <label class="checkbox-labels" [for]="category.name">{{category.name}}</label>
             </div>
         </div>

@@ -159,4 +159,15 @@
             }
         }
     }
+
+    .dialog-content {
+        width: 90%;
+
+        .btn-controls {
+            .delete-btn,
+            .cancel-btn {
+                width: unset;
+            }
+        }
+    }
 }

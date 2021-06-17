@@ -3,6 +3,6 @@
     <div class="item-content">
         <h5 class="product-price">${{recipe.price.toFixed(2)}} / {{recipe.type}}</h5>
         <h5 class="product-title">{{recipe.name}}</h5>
-        <button (click)="addToCart(recipe.name)" class="add-cart-btn">Add</button>
+        <button (click)="addToCart(recipe.name, recipe.price)" class="add-cart-btn">Add</button>
     </div>
 </div>

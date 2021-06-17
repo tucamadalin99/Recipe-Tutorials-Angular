@@ -12,18 +12,22 @@ import { Router } from '@angular/router';
 })
 export class ProductItemComponent implements OnInit {
   @Input() recipe: Recipe;
+  private cartPrice: number = 0;
 
   constructor(private _firebaseService: FirebaseService, private _toastr: ToastrService, private router: Router) {
 
   }
 
   ngOnInit(): void {
-
+    this._firebaseService.getCartInfo().valueChanges().subscribe(cart => {
+      this.cartPrice = cart.cartPrice;
+    })
   }
 
-  addToCart(productName) {
-    this._firebaseService.addToCart(productName).then(() => {
-      this._toastr.success(`${productName} added to cart!`, "Success")
+  addToCart(product: string, price: number) {
+    this._firebaseService.getCartInfo().update({ cartPrice: price + this.cartPrice });
+    this._firebaseService.addToCart(product).then(() => {
+      this._toastr.success(`${product} added to cart!`, "Success")
     })
   }
 
