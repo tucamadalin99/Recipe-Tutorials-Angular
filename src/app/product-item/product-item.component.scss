@@ -1,49 +1,70 @@
 .product-container {
+    border: 1px solid var(--light-gray);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 3vh 2.5vw;
-    border: 1px solid var(--light-gray);
+    justify-content: space-between;
+    align-items: center;
+    width: 14vw;
+    height: 35vh;
+    margin: 2vh;
 
     .product-img {
         width: 100%;
-        height: 22vh;
-        cursor: pointer;
-    }
-
-    .product-price {
-        margin: 2vh 0.5vw;
-    }
-
-    .product-title {
-        margin: 0 0.5vw 10vh 0.5vw;
-    }
-
-    .add-cart-btn {
-        margin: 2vh 1vw;
-        height: 7vh;
-        font-size: 15px;
-        font-weight: bold;
-        border: 0;
-        background-color: var(--light-yellow);
-        cursor: pointer;
+        height: 15vh;
+        background-size: cover;
+        background-position: center;
         transition: 0.5s;
     }
 
-    .add-cart-btn:hover {
-        background-color: var(--dark-yellow);
+    .product-img:hover {
+        cursor: pointer;
+    }
+
+    .item-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .product-price {
+            margin: 0;
+        }
+        .product-title {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .add-cart-btn {
+            width: 10vw;
+            height: 7vh;
+            border: 0px;
+            background-color: rgb(254, 232, 109);
+            font-weight: bold;
+            margin-bottom: 2vh;
+            transition: 0.5s;
+        }
+
+        .add-cart-btn:hover {
+            cursor: pointer;
+            color: white;
+        }
     }
 }
 
 @media only screen and(max-width:600px) {
     .product-container {
-        height: 40vh;
+        width: 35vw;
+        height: 30vh;
+
         .product-img {
-            height: 15vh;
+            height: 12vh;
         }
 
-        .add-cart-btn {
-            margin: 0;
+        .item-content {
+            .add-cart-btn {
+                width: 20vw;
+                height: 5vh;
+            }
         }
     }
 }

@@ -29,6 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { RecipePageComponent } from './recipe-page/recipe-page.component';
 import { CommentSectionComponent } from './comment-section/comment-section.component';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { CommentSectionComponent } from './comment-section/comment-section.compo
     ProductCarouselComponent,
     ProductPageComponent,
     RecipePageComponent,
-    CommentSectionComponent
+    CommentSectionComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
+import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   cart: any = new Object(null);
 
-  constructor(private firebaseService: FirebaseService) { }
+  constructor(private firebaseService: FirebaseService, private route: Router, private data: DataService) { }
 
   private getInfo(): void {
     this.firebaseService.getCartInfo().valueChanges().subscribe(cart => {
@@ -41,7 +43,13 @@ export class HeaderComponent implements OnInit {
   }
 
   public searchItem(value) {
-    console.log(`You searched for ${value}`);
+    if (value) {
+      this.route.url.includes('/search') ?
+        this.data.sendString(value) :
+        this.route.navigate(['/search', 'all-categories', value]);
+    } else {
+      this.route.navigate(['/search', "all-categories", "all-items"]);
+    }
   }
 
   ngOnInit() {

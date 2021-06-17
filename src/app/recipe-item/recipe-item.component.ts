@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-item',
@@ -11,10 +12,10 @@ export class RecipeItemComponent implements OnInit {
   imageUrl: string;
   hasImg: boolean = true;
   sendItem(item: string): void {
-    console.log(item);
+    this.router.navigate(['/search', item, "all-items"]);
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.imageUrl = `../../assets/recipe-items/${this.item}.png`;
