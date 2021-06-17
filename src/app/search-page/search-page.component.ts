@@ -31,13 +31,17 @@ export class SearchPageComponent implements OnInit {
     });
     let prices: number[] = [];
     this._firebaseService.getAllRecipes().valueChanges().subscribe(recipes => {
+      this.categories = [];
+      let namesArr = [];
       recipes.forEach(recipe => {
         prices.push(recipe.price);
         recipe.tags.forEach(tag => {
-          this.categories.push({ name: tag, isChecked: false });
+          namesArr.push(tag);
         })
       })
-      this.categories = _.uniq(this.categories);
+      _.uniq(namesArr).forEach(el => {
+        this.categories.push({ name: el, isChecked: false });
+      })
       this.allItems = recipes;
       this.currentItems = this.allItems;
       this.priceMax = Math.max(...prices);
@@ -73,13 +77,14 @@ export class SearchPageComponent implements OnInit {
     if (this.priceLimit > 0) {
       this.currentItems = this.filterByPrice();
     }
+
+    if (this.filterByCategories().length > 0) {
+      this.currentItems = this.filterByCategories();
+    }
+
     if (this.isFeatured) {
       this.currentItems = this.filterByFeatured();
     }
-
-    if (this.filterByCategories().length > 0)
-      this.currentItems = this.filterByCategories();
-
   }
 
   filterByPrice(): Recipe[] {

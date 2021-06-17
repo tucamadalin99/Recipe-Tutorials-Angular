@@ -108,6 +108,9 @@
 
 @media only screen and(max-width:600px) {
     .content {
+        .recipe-img {
+            height: 30vh;
+        }
         .overall-grade {
             width: 100%;
         }

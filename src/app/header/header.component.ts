@@ -24,6 +24,8 @@ export class HeaderComponent implements OnInit {
         if (!this.cart.cartItems) {
           this.cart.cartPrice = 0;
           this.cart.cartPrice = this.cart.cartPrice.toFixed(2);
+        } else {
+          this.cart.cartPrice = this.cart.cartPrice.toFixed(2);
         }
 
         if (this.cart.cartItems) {
