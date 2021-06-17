@@ -11,14 +11,15 @@
             </div>
 
         </div>
+
+        <h4>By featured:</h4>
         <div class="featured-box">
-            <h4>By featured:</h4>
             <input (input)="isFeatured = !isFeatured" type="checkbox" id="featured" name="featured">
             <label for="featured">Featured</label>
         </div>
 
+        <h4>By category:</h4>
         <div class="filter-inputs-container">
-            <h4>By category:</h4>
             <div class="filter-container" *ngFor="let category of categories">
                 <input type="checkbox" [(ngModel)]="category.isChecked" [id]="category.name" [name]="category.name">
                 <label class="checkbox-labels" [for]="category.name">{{category.name}}</label>
