@@ -21,12 +21,7 @@ export class HeaderComponent implements OnInit {
         let counts = {};
         let formattedArr = [];
         //Counting repetitions of items
-        if (!this.cart.cartItems) {
-          this.cart.cartPrice = 0;
-          this.cart.cartPrice = this.cart.cartPrice.toFixed(2);
-        } else {
-          this.cart.cartPrice = this.cart.cartPrice.toFixed(2);
-        }
+        this.cart.cartPrice = this.cart.cartPrice.toFixed(2);
 
         if (this.cart.cartItems) {
           for (let prop in this.cart.cartItems) {
