@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import { Recipe } from '../models/Recipe';
 import * as _ from 'lodash';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-search-page',
@@ -19,10 +20,15 @@ export class SearchPageComponent implements OnInit {
   private categorySearch: string;
   private stringSearch: string;
 
-  constructor(private _firebaseService: FirebaseService, private route: ActivatedRoute) { }
+  constructor(private _firebaseService: FirebaseService, private route: ActivatedRoute, private router: Router, private data: DataService) { }
 
   ngOnInit(): void {
-
+    this.data.currentString.subscribe(message => {
+      if (this.router.url.includes("/search")) {
+        this.currentItems =
+          this.allItems.filter(el => el.name.toLowerCase().includes(message.toLowerCase()));
+      }
+    });
     let prices: number[] = [];
     this._firebaseService.getAllRecipes().valueChanges().subscribe(recipes => {
       recipes.forEach(recipe => {
