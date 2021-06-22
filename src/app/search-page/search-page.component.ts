@@ -74,17 +74,18 @@ export class SearchPageComponent implements OnInit {
 
   filterItems(): void {
     this.currentItems = this.allItems;
-    if (this.priceLimit > 0) {
-      this.currentItems = this.filterByPrice();
-    }
-
     if (this.filterByCategories().length > 0) {
       this.currentItems = this.filterByCategories();
+    }
+
+    if (this.priceLimit > 0) {
+      this.currentItems = this.filterByPrice();
     }
 
     if (this.isFeatured) {
       this.currentItems = this.filterByFeatured();
     }
+
   }
 
   filterByPrice(): Recipe[] {

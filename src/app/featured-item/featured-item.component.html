@@ -1,6 +1,6 @@
 <div (click)="onRecipeClick()" class="featured-item-container">
     <div class="fav-container">
-        <app-favourite (updateFavourite)="onUpdateFavourite()" [isFavourite]="recipeItem.saved"></app-favourite>
+        <app-favourite (updateFavourite)="onUpdateFavourite()" [fav-toggle]="recipeItem.saved"></app-favourite>
     </div>
     <img class="featured-item-img" [src]="recipeItem.imageUrl">
     <div class="featured-item-tags">

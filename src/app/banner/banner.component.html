@@ -9,8 +9,8 @@
         <h1 class="title">{{recipe.name}}</h1>
         <p class="description">{{recipe.description}}</p>
         <div class="btns-container">
-            <app-favourite (updateFavourite)="onUpdateFavourite()" [isFavourite]="recipe.saved"></app-favourite>
-            <app-liked (updateLiked)="onUpdateLiked()" [isLiked]="recipe.liked"></app-liked>
+            <app-favourite (updateFavourite)="onUpdateFavourite()" [fav-toggle]="recipe.saved"></app-favourite>
+            <app-liked (updateLiked)="onUpdateLiked()" [like-toggle]="recipe.liked"></app-liked>
         </div>
     </div>
 </div>

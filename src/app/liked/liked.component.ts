@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   encapsulation: ViewEncapsulation.None
 })
 export class LikedComponent implements OnInit {
-  @Input() isLiked;
+  @Input('like-toggle') isLiked;
   @Output() updateLiked: EventEmitter<void> =
     new EventEmitter<void>();
 

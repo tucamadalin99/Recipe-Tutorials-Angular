@@ -4,8 +4,8 @@
     </div>
 
     <div class="search-bar-container">
-        <input class="search-input" name="search" type="text" placeholder="Search" #search>
-        <button (click)="searchItem(search.value)" class="search-btn">
+        <input class="search-input" #searchInput type="text" placeholder="Search" #search>
+        <button (click)="searchItem(searchInput.value)" class="search-btn">
             <img class="search-icon" src="../../assets/search.svg" alt="Search Icon">
         </button>
     </div>

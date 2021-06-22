@@ -10,7 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 })
 export class FavouriteComponent implements OnInit {
 
-  @Input() isFavourite;
+  @Input('fav-toggle') isFavourite;
   @Output() updateFavourite: EventEmitter<void> =
     new EventEmitter<void>();
 
