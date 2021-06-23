@@ -31,6 +31,7 @@ import { RecipePageComponent } from './recipe-page/recipe-page.component';
 import { CommentSectionComponent } from './comment-section/comment-section.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { PrimaryButtonDirective } from './primary-button.directive';
+import { NavMobileComponent } from './nav-mobile/nav-mobile.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { PrimaryButtonDirective } from './primary-button.directive';
     RecipePageComponent,
     CommentSectionComponent,
     SearchPageComponent,
-    PrimaryButtonDirective
+    PrimaryButtonDirective,
+    NavMobileComponent
   ],
   imports: [
     BrowserModule,

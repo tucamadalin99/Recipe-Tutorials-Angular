@@ -1,0 +1,20 @@
+<button (click)="onMenuToggle()" class="menu-toggle-btn"><img src="../../assets/menu.svg" alt="Menu Icon"
+        class="icon-size"></button>
+<div *ngIf="this.isToggled" class="modal-menu">
+    <div class="drawer">
+        <div class="nav-container">
+            <div class="close-section">
+                <button (click)="onMenuToggle()" class="close-menu-btn"><img class="icon-size"
+                        src="../../assets/cancel.svg" alt="Close Menu Icon"></button>
+            </div>
+            <ul class="nav-bar">
+                <li class="nav-item"><a routerLink="/">Home</a></li>
+                <li class="nav-item starred"><a routerLink="/recipes">Recipes</a></li>
+                <li class="nav-item"><a routerLink="/">Forum</a></li>
+                <li class="nav-item"><a routerLink="/shop">Shop</a></li>
+                <li class="nav-item"><a routerLink="/">About</a></li>
+                <li class="nav-item"><a routerLink="/">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
