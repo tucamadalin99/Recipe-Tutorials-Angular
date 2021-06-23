@@ -5,7 +5,7 @@
 
     <div class="search-bar-container">
         <input class="search-input" #searchInput type="text" placeholder="Search" #search>
-        <button (click)="searchItem(searchInput.value)" class="search-btn">
+        <button appPrimaryButton (click)="searchItem(searchInput.value)" class="search-btn">
             <img class="search-icon" src="../../assets/search.svg" alt="Search Icon">
         </button>
     </div>

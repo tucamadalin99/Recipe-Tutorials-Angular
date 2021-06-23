@@ -30,6 +30,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { RecipePageComponent } from './recipe-page/recipe-page.component';
 import { CommentSectionComponent } from './comment-section/comment-section.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { PrimaryButtonDirective } from './primary-button.directive';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
     ProductPageComponent,
     RecipePageComponent,
     CommentSectionComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    PrimaryButtonDirective
   ],
   imports: [
     BrowserModule,
