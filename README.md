@@ -72,7 +72,7 @@ A rating system is implemented in which the user can grade a recipe and leave a 
 ![image](https://user-images.githubusercontent.com/50795013/123332311-051c4600-d549-11eb-8363-abbbf83632ab.png)
 
 ## Search Page
-![search](https://user-images.githubusercontent.com/50795013/119495576-3697cb00-bd6b-11eb-9c0f-4777217c6cfc.png)
+![image](https://user-images.githubusercontent.com/50795013/123333564-95a75600-d54a-11eb-9dab-4759a96da88a.png)
 The search pages includes a grid of all the recipes present in the database along with some filters for cutting down unwanted results.
 
 ### Mobile view:
