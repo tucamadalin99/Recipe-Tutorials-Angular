@@ -55,7 +55,7 @@ An overall simple web-app made with Angular Framework
 
 The homepage contains a main header present on all the pages, a banner with a featured recipe, a container with the recipe categories present in the db and finally 2 carousels of recipes from which the user can pick what he wants.
 
-##Mobile view: 
+### Mobile view: 
 
 ![image](https://user-images.githubusercontent.com/50795013/123332234-e9b13b00-d548-11eb-9fee-e27dc9a4e746.png)
 
@@ -67,7 +67,7 @@ This page contains a main container in which the description,picture and overall
 At the bottom, the same carousel is present except the item that the user currently viewing.
 A rating system is implemented in which the user can grade a recipe and leave a comment. The user can delete or edit his comment later on if he decides so.
 
-##Mobile view:
+### Mobile view:
 
 ![image](https://user-images.githubusercontent.com/50795013/123332311-051c4600-d549-11eb-8363-abbbf83632ab.png)
 
@@ -75,7 +75,7 @@ A rating system is implemented in which the user can grade a recipe and leave a 
 ![search](https://user-images.githubusercontent.com/50795013/119495576-3697cb00-bd6b-11eb-9c0f-4777217c6cfc.png)
 The search pages includes a grid of all the recipes present in the database along with some filters for cutting down unwanted results.
 
-##Mobile view:
+### Mobile view:
 
 ![image](https://user-images.githubusercontent.com/50795013/123332403-1ebd8d80-d549-11eb-9613-e3d276b63bfc.png)
 
