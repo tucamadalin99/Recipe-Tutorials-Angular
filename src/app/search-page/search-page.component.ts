@@ -4,6 +4,7 @@ import { Recipe } from '../models/Recipe';
 import * as _ from 'lodash';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-search-page',
@@ -19,11 +20,12 @@ export class SearchPageComponent implements OnInit {
   public isFeatured: boolean = false;
   private categorySearch: string;
   private stringSearch: string;
+  private dataSubscription: Subscription;
 
   constructor(private _firebaseService: FirebaseService, private route: ActivatedRoute, private router: Router, private data: DataService) { }
 
   ngOnInit(): void {
-    this.data.currentString.subscribe(message => {
+    this.dataSubscription = this.data.currentString.subscribe(message => {
       if (this.router.url.includes("/search")) {
         this.currentItems =
           this.allItems.filter(el => el.name.toLowerCase().includes(message.toLowerCase()));
@@ -66,6 +68,10 @@ export class SearchPageComponent implements OnInit {
       this.categorySearch = params['word'];
       this.stringSearch = params['search'];
     })
+  }
+
+  ngOnDestroy() {
+    this.dataSubscription.unsubscribe();
   }
 
   setValue($event): void {

@@ -10,7 +10,6 @@ import { ShopComponent } from './shop/shop.component';
 const routes: Routes = [
   { path: "", component: HomepageComponent },
   { path: "recipes", component: RecipesComponent },
-  { path: "shop", component: ShopComponent },
   { path: "products/:id", component: ProductPageComponent },
   { path: "recipe/:id", component: RecipePageComponent },
   { path: "search/:word/:search", component: SearchPageComponent }
