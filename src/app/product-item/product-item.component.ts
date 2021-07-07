@@ -19,16 +19,17 @@ export class ProductItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._firebaseService.getCartInfo().valueChanges().subscribe(cart => {
+    this._firebaseService.getCartInfo().subscribe(cart => {
       this.cartPrice = cart.cartPrice;
     })
   }
 
   addToCart(product: string, price: number) {
-    this._firebaseService.getCartInfo().update({ cartPrice: price + this.cartPrice });
-    this._firebaseService.addToCart(product).then(() => {
-      this._toastr.success(`${product} added to cart!`, "Success")
-    })
+    this._firebaseService.updateCart(price, this.cartPrice).then(() => {
+      this._firebaseService.addToCart(product).then(() => {
+        this._toastr.success(`${product} added to cart!`, "Success")
+      })
+    });
   }
 
   onImgClick(): void {

@@ -12,20 +12,24 @@ export class FirebaseService {
   constructor(private firebaseDatabase: AngularFireDatabase) {
   }
 
-  getRecipe(key: number): AngularFireObject<Recipe> {
-    return this.firebaseDatabase.object(`${this.dbRef}/${key}`);
+  getRecipe(key: number): Observable<Recipe> {
+    return this.firebaseDatabase.object(`${this.dbRef}/${key}`).valueChanges() as Observable<Recipe>;
   }
 
-  getAllRecipes(): AngularFireList<Recipe> {
-    return this.firebaseDatabase.list(`${this.dbRef}`);
+  getAllRecipes(): Observable<Recipe[]> {
+    return this.firebaseDatabase.list(`${this.dbRef}`).valueChanges() as Observable<Recipe[]>;
   }
 
   async updateProps(key: number, props: object): Promise<void> {
     this.firebaseDatabase.object(`${this.dbRef}/${key}`).update(props);
   }
 
-  getCartInfo(): AngularFireObject<any> {
-    return this.firebaseDatabase.object('/1');
+  getCartInfo(): Observable<any> {
+    return this.firebaseDatabase.object('/1').valueChanges() as Observable<any>;
+  }
+
+  async updateCart(newPrice: number, oldPrice: number): Promise<any> {
+    this.firebaseDatabase.database.ref('/1').update({ cartPrice: oldPrice + newPrice });
   }
 
   async addToCart(product: string): Promise<void> {

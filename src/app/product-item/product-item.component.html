@@ -1,4 +1,4 @@
-<div class="product-container">
+<div class="product-container" *ngIf="recipe">
     <div (click)="onImgClick()" [style.background-image]="'url('+recipe.imageUrl+')'" class="product-img"></div>
     <div class="item-content">
         <h5 class="product-price">${{recipe.price.toFixed(2)}} / {{recipe.type}}</h5>

@@ -1,12 +1,20 @@
 import { TestBed } from '@angular/core/testing';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 import { FirebaseService } from './firebase.service';
+
+let angularFireDatabaseStub = { list: () => { } };
 
 describe('FirebaseService', () => {
   let service: FirebaseService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [
+        FirebaseService,
+        { provide: AngularFireDatabase, useValue: angularFireDatabaseStub }
+      ]
+    });
     service = TestBed.inject(FirebaseService);
   });
 

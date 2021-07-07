@@ -15,7 +15,7 @@ export class BannerComponent implements OnInit {
   constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
-    this.firebaseService.getRecipe(0).valueChanges().subscribe((recipe: any) => {
+    this.firebaseService.getRecipe(0).subscribe((recipe: any) => {
       this.recipe = new Recipe(recipe);
     })
   }

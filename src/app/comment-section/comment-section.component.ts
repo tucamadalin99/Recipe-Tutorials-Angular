@@ -28,7 +28,7 @@ export class CommentSectionComponent implements OnInit {
   })
 
   ngOnInit(): void {
-    this._firebaseService.getRecipe(this.recipeKey).valueChanges().subscribe(recipe => {
+    this._firebaseService.getRecipe(this.recipeKey).subscribe(recipe => {
       this.reviews = [];
       if (recipe.comments && recipe.comments.length > 0) {
         recipe.comments.forEach(el => {

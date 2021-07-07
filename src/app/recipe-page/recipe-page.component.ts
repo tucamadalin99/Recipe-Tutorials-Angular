@@ -20,11 +20,11 @@ export class RecipePageComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.key = +params['id'];
-      this._firebaseService.getRecipe(this.key).valueChanges().subscribe(recipe => {
+      this._firebaseService.getRecipe(this.key).subscribe(recipe => {
         this.recipe = new Recipe(recipe);
       })
     })
-    this._firebaseService.getRecipe(this.key).valueChanges().subscribe(recipe => {
+    this._firebaseService.getRecipe(this.key).subscribe(recipe => {
       this.allGrades = 0;
       this.gradeArr = ['star-outline', 'star-outline', 'star-outline', 'star-outline', 'star-outline'];
       if (recipe.comments && recipe.comments.length > 0) {

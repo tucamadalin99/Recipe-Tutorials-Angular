@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(private firebaseService: FirebaseService, private route: Router, private data: DataService) { }
 
   private getInfo(): void {
-    this.firebaseService.getCartInfo().valueChanges().subscribe(cart => {
+    this.firebaseService.getCartInfo().subscribe(cart => {
       if (cart) {
         this.cart = new Object(cart);
         let counts = {};

@@ -18,7 +18,7 @@ export class ProductPageComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.key = +params['id'];
-      this._firebaseService.getRecipe(this.key).valueChanges().subscribe((recipe) => {
+      this._firebaseService.getRecipe(this.key).subscribe((recipe) => {
         this.product = new Recipe(recipe);
       })
     })

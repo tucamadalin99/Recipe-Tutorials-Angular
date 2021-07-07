@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -32,6 +31,7 @@ import { CommentSectionComponent } from './comment-section/comment-section.compo
 import { SearchPageComponent } from './search-page/search-page.component';
 import { PrimaryButtonDirective } from './primary-button.directive';
 import { NavMobileComponent } from './nav-mobile/nav-mobile.component';
+import { FirebaseService } from './firebase.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +59,7 @@ import { NavMobileComponent } from './nav-mobile/nav-mobile.component';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, 'Angular-Easymeals'),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AppRoutingModule,
     FormsModule,
@@ -69,7 +69,8 @@ import { NavMobileComponent } from './nav-mobile/nav-mobile.component';
     ToastrModule.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [FirebaseService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

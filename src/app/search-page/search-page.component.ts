@@ -32,7 +32,7 @@ export class SearchPageComponent implements OnInit {
       }
     });
     let prices: number[] = [];
-    this._firebaseService.getAllRecipes().valueChanges().subscribe(recipes => {
+    this._firebaseService.getAllRecipes().subscribe(recipes => {
       this.categories = [];
       let namesArr = [];
       recipes.forEach(recipe => {

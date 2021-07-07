@@ -1,9 +1,9 @@
-<div class="cart-container">
+<div class="cart-container" *ngIf="cart">
     <img (click)="openDialog()" src="../../assets/svg/shopping-cart.svg" alt="Shopping cart" class="cart-img icon-size">
     <span (click)="openDialog()" class="cart-info">Cart (${{cart.cartPrice}})</span>
 </div>
 
-<div class="cart-dialog" [ngClass]="{'dialog-active':isOpened}">
+<div class="cart-dialog" *ngIf="cart" [ngClass]="{'dialog-active':isOpened}">
     <div class="item-container" *ngIf="!cart.notLogged; else notLogged">
         <h2>Your cart contains</h2>
         <ul class="cart-items-list">

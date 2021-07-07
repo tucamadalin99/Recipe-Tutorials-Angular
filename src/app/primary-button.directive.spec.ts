@@ -1,8 +1,8 @@
-import { PrimaryButtonDirective } from './primary-button.directive';
+// import { PrimaryButtonDirective } from './primary-button.directive';
 
-describe('PrimaryButtonDirective', () => {
-  it('should create an instance', () => {
-    const directive = new PrimaryButtonDirective();
-    expect(directive).toBeTruthy();
-  });
-});
+// // describe('PrimaryButtonDirective', () => {
+// //   it('should create an instance', () => {
+// //     const directive = new PrimaryButtonDirective();
+// //     expect(directive).toBeTruthy();
+// //   });
+// });

@@ -16,7 +16,7 @@ export class HomepageComponent implements OnInit {
   constructor(private _firebaseService: FirebaseService) { }
 
   ngOnInit() {
-    this._firebaseService.getAllRecipes().valueChanges().subscribe(recipes => {
+    this._firebaseService.getAllRecipes().subscribe(recipes => {
       recipes.forEach(recipe => {
         this.categories = [...this.categories, ...recipe.tags];
       })
