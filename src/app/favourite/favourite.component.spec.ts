@@ -24,4 +24,15 @@ describe('FavouriteComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be able to trigger on favorite button', async () => {
+    spyOn(component, 'onClick');
+
+    const button = fixture.debugElement.nativeElement.querySelector('button');
+    button.click();
+
+    fixture.whenStable().then(() => {
+      expect(component.onClick).toHaveBeenCalled();
+    })
+  })
 });

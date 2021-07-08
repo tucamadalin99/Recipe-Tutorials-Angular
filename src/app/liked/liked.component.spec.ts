@@ -24,4 +24,15 @@ describe('LikedComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be able to trigger update like by button', async () => {
+    spyOn(component, 'onClick');
+
+    const button = fixture.debugElement.nativeElement.querySelector('button');
+    button.click();
+
+    fixture.whenStable().then(() => {
+      expect(component.onClick).toHaveBeenCalled();
+    })
+  })
 });

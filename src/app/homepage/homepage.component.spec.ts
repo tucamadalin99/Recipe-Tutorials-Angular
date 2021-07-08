@@ -10,7 +10,7 @@ import { HomepageComponent } from './homepage.component';
 describe('HomepageComponent', () => {
   let fireDatabaseStub = {
     getAllRecipes(): Observable<Recipe[]> {
-      return of([]);
+      return of([new Recipe(null), new Recipe(null), new Recipe(null)]);
     }
   };
   let component: HomepageComponent;
@@ -34,4 +34,10 @@ describe('HomepageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should fetch all the recipes', () => {
+    fireDatabaseStub.getAllRecipes().subscribe((recipes) => {
+      expect(recipes.length).toBeGreaterThan(0);
+    })
+  })
 });

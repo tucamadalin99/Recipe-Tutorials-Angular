@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { FirebaseService } from '../firebase.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -21,9 +21,9 @@ export class CommentSectionComponent implements OnInit {
   constructor(private _firebaseService: FirebaseService, private formBuilder: FormBuilder, private tosatr: ToastrService) { }
 
   commentForm = this.formBuilder.group({
-    comment: '',
-    name: '',
-    grade: 0,
+    comment: ['', Validators.required],
+    name: ['', Validators.required],
+    grade: [0, Validators.required],
     userId: 0
   })
 

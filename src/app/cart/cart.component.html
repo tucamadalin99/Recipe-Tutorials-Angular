@@ -5,16 +5,16 @@
 
 <div class="cart-dialog" *ngIf="cart" [ngClass]="{'dialog-active':isOpened}">
     <div class="item-container" *ngIf="!cart.notLogged; else notLogged">
-        <h2>Your cart contains</h2>
+        <h2 id="dialogTitle">Your cart contains</h2>
         <ul class="cart-items-list">
             <li *ngFor="let item of cart.cartItems">{{item}}</li>
         </ul>
-        <button (click)="closeDialog()" class="close-dialog">Close</button>
+        <button (click)="closeDialog()" id="validDialog" class="close-dialog">Close</button>
     </div>
     <ng-template #notLogged>
         <div class="item-container">
             <h2 class="not-logged">You are not logged in</h2>
-            <button (click)="closeDialog()" class="close-dialog">Close</button>
+            <button (click)="closeDialog()" id="invalidDialog" class="close-dialog">Close</button>
         </div>
     </ng-template>
 </div>

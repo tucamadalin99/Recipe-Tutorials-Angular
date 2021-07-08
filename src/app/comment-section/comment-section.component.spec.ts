@@ -13,7 +13,7 @@ describe('CommentSectionComponent', () => {
   let component: CommentSectionComponent;
   let fixture: ComponentFixture<CommentSectionComponent>;
   let angularFireStub = {
-    getRecipe(index: number): Observable<Recipe> {
+    getRecipe(): Observable<Recipe> {
       return of(new Recipe(null));
     }
   }
@@ -37,4 +37,29 @@ describe('CommentSectionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return a recipe', () => {
+    angularFireStub.getRecipe().subscribe(recipe => {
+      expect(recipe).toBeTruthy();
+    })
+  })
+
+  it('should have an invalid form when empty', () => {
+    expect(component.commentForm.valid).toBeFalsy();
+  })
+
+  it('should have an invalid comment control when empty', () => {
+    let comment = component.commentForm.controls['comment'];
+    expect(comment.valid).toBeFalsy();
+  })
+
+  it('should have an invalid name control if empty', () => {
+    let name = component.commentForm.controls['name'];
+    expect(name.valid).toBeFalsy();
+  })
+
+  it('should have a zero grade control when empty', () => {
+    let grade = component.commentForm.controls['grade'];
+    expect(grade.value).toEqual(0);
+  })
 });
